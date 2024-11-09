@@ -36,8 +36,10 @@ The application is built using the `chi` router and can be run as a standalone G
    ```bash
    docker compose build
    docker compose up
-
-3. Access the API at http://localhost:5000/healthz.
+3. Make the .env file as per .env.example
+4. Access the API
+        http://localhost:5000/healthz.
+        http://localhost:5000/enter your request argument.
 
 ## Basic Usage
 ### API endpoints

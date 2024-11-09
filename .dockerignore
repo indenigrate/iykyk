@@ -1,0 +1,9 @@
+# Ignore build artifacts, IDE configuration, and other unnecessary files
+.git
+vendor
+*.log
+*.md
+*.yaml
+*.env
+* .env.example
+iykyk

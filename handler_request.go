@@ -20,7 +20,8 @@ func (apiCfg *apiConfig) handlerRequest(w http.ResponseWriter, r *http.Request) 
 		respondWithError(w, 400, err.Error())
 		return
 	}
-	respondWithJSON(w, 200, fmt.Sprintf("%v", response))
+	fmt.Printf(response)
+	respondWithText(w, 200, response)
 }
 
 func getInput(r *http.Request) (string, error) {

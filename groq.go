@@ -69,6 +69,7 @@ func callGroqAPI(content string) (string, error) {
 
 	client := &http.Client{}
 	resp, err := client.Do(req)
+	// fmt.Printf("%v\n", resp)
 	if err != nil {
 		return "", fmt.Errorf("failed to send request: %w", err)
 	}

@@ -29,3 +29,9 @@ func respondWithJSON(w http.ResponseWriter, code int, payload interface{}) {
 	w.WriteHeader(code)
 	w.Write(dat)
 }
+func respondWithText(w http.ResponseWriter, code int, v string) {
+
+	w.Header().Add("Content-Type", "text/plain")
+	w.WriteHeader(code)
+	w.Write([]byte(v))
+}

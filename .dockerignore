@@ -4,6 +4,5 @@ vendor
 *.log
 *.md
 *.yaml
-*.env
 * .env.example
 iykyk

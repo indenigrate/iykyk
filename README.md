@@ -1,4 +1,4 @@
-# Groq API Proxy - Go Backend
+# IYKYK 😉
 
 This Go application serves as a simple proxy for interacting with the Groq API. It forwards requests to the Groq API for chat completions and returns the responses to the client. The app also includes basic CORS support, environment configuration via `.env` file, and a health check endpoint.
 

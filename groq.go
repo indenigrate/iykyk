@@ -32,7 +32,7 @@ type Response struct {
 	ID                string   `json:"id"`
 	Object            string   `json:"object"`
 	Created           int      `json:"created"`
-	Model             string   `json:"model"`
+	Model             string   `js on:"model"`
 	Choices           []Choice `json:"choices"`
 	Usage             Usage    `json:"usage"`
 	SystemFingerprint string   `json:"system_fingerprint"`
@@ -50,7 +50,7 @@ func callGroqAPI(content string) (string, error) {
 
 	url := "https://api.groq.com/openai/v1/chat/completions"
 	requestBody, err := json.Marshal(map[string]interface{}{
-		"model": "llama-3.2-11b-vision-preview",
+		"model": "llama-3.2-90b-vision-preview",
 		"messages": []map[string]string{
 			{"role": "user", "content": content},
 		},
@@ -89,9 +89,10 @@ func callGroqAPI(content string) (string, error) {
 	if err != nil {
 		return "", err
 	}
-	if len(response.Choices) > 0 {
-		content := response.Choices[0].Message.Content
-		return content, nil
+	if len(response.Choices) <= 0 {
+		return "", err
+
 	}
-	return "", err
+	content = response.Choices[0].Message.Content
+	return content, nil
 }

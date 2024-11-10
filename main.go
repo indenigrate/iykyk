@@ -48,6 +48,7 @@ func main() {
 	//handle requests
 	router.Get("/healthz", handlerReadiness)
 	router.Get("/{input}", apiCfg.handlerRequest)
+	router.Post("/chat", apiCfg.handlerChatRequest)
 	//initiate server properties
 	srv := &http.Server{
 		Handler: router,
